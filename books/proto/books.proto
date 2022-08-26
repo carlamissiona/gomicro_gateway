@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package books;
+
+option go_package = "./proto;books";
+
+service Books {
+	rpc List(ListRequest) returns (Response) {}
+	rpc Get(Request)  returns (Response) {}
+}
+
+
+message Request {
+	string name = 1;
+}
+
+message ListRequest {
+
+}
+
+message Response {
+	string msg = 1;
+}

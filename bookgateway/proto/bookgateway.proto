@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package bookgateway;
+
+option go_package = "./proto;bookgateway";
+
+service Bookgateway {
+	rpc Call(Request) returns (Response) {}
+	rpc List(ListRequest) returns (Response) {} //list services
+}
+
+message Message {
+	string say = 1;
+}
+
+
+message Request {
+	string name = 1;
+}
+
+message Response {
+	string msg = 1;
+}
+
+message ListRequest {
+	string name = 1;
+}
+
